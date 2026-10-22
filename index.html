@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Johan Grauslund Kjeldsen — Architectural Technologist</title>
+  <meta name="description" content="Portfolio of Johan Grauslund Kjeldsen, architectural technologist student in Copenhagen.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header" id="header"></header>
+  <main id="main">
+    <section class="hero" id="hero"></section>
+    <section class="section wrap" id="work" aria-labelledby="work-title">
+      <div class="bar">
+        <h2 class="bar__title" id="work-title">Work</h2>
+        <div class="switch" role="group" aria-label="View">
+          <button class="tile" data-view="grid" aria-pressed="true">Sheets</button>
+          <button class="tile" data-view="index" aria-pressed="false">Index</button>
+        </div>
+      </div>
+      <div id="work-grid"></div>
+      <div class="index" id="work-index" hidden></div>
+      <img class="peek" id="peek" alt="" aria-hidden="true">
+    </section>
+    <section class="section wrap" id="about" aria-labelledby="about-title">
+      <div class="bar"><h2 class="bar__title" id="about-title">About</h2></div>
+      <div class="about" id="about-body"></div>
+    </section>
+    <section class="contact" id="contact" aria-labelledby="contact-title"></section>
+  </main>
+  <footer class="footer mono" id="footer"></footer>
+  <script src="content.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
