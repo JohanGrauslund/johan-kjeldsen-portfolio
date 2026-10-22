@@ -45,6 +45,10 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .tile { display: flex; justify-content: space-between; gap: 1em; padding: 6px 8px; background: var(--tile); font-family: var(--mono); font-size: var(--fs-mono); text-transform: uppercase; transition: background 150ms, color 150ms; }
 .tile:hover, .tile[aria-current="true"], .tile[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
 .tile--name { grid-column: 1 / -1; justify-content: center; }
+/* Phones, project pages: only the name (links home); the section titles sit right underneath */
+@media (max-width: 759px) {
+  [data-page="project"] .header .tile:not(.tile--name) { display: none; }
+}
 @media (min-width: 760px) {
   .tiles { grid-template-columns: 2fr repeat(4, 1fr); }
   .tile--name { grid-column: auto; justify-content: flex-start; }
@@ -187,7 +191,10 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .p-toc a:hover, .p-toc a[aria-current="true"] { background: none; color: var(--accent); }
 }
 .p-content { min-width: 0; }
-@media (max-width: 899px) { .block-text { scroll-margin-top: calc(var(--hdr, 6rem) + 2.5rem) !important; } } /* clear the sticky section bar on phones */
+@media (max-width: 899px) {
+  .block-text { scroll-margin-top: calc(var(--hdr, 6rem) + 2.5rem) !important; } /* clear the sticky section bar on phones */
+  .p-toc { top: calc(var(--hdr, 6rem) - 16px); padding-bottom: var(--gap); } /* sit flush under the header */
+} /* clear the sticky section bar on phones */
 /* Main section titles: heading with its text directly underneath, same left edge */
 /* Space above a section is margin, not padding, so a jump lands with the title at the top */
 .block-text { margin-top: var(--s-5); padding-bottom: var(--s-2); scroll-margin-top: var(--hdr, 6rem); }
