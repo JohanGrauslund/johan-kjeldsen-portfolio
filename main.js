@@ -166,10 +166,17 @@ function project() {
   const tabs = [...document.querySelectorAll(".p-toc a")];
   const heads = secs.map((b) => document.getElementById(`sec-${b.n}`));
   const setHdr = () => document.documentElement.style.setProperty("--hdr", $("#header").offsetHeight + 16 + "px");
+  const bar = document.querySelector(".p-toc ol");
+  let current = -2;
   const mark = () => {
     let k = -1;
     heads.forEach((h, j) => { if (h.getBoundingClientRect().top < innerHeight * 0.4) k = j; });
+    if (k === current) return;
+    current = k;
     tabs.forEach((t, j) => (j === k ? t.setAttribute("aria-current", "true") : t.removeAttribute("aria-current")));
+    // Phones: the bar scrolls sideways, so slide the active title into the middle of it
+    const t = tabs[Math.max(k, 0)].parentElement;
+    if (bar.scrollWidth > bar.clientWidth) bar.scrollTo({ left: t.offsetLeft - (bar.clientWidth - t.offsetWidth) / 2, behavior: "smooth" });
   };
   // Images above a section change the page height as they load. Load them first, then scroll once,
   // so the jump lands exactly on the title instead of being nudged afterwards.
