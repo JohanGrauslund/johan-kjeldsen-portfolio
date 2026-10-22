@@ -18,21 +18,24 @@ window.SITE = {
     "I'm driven by sustainable construction and by combining functionality, aesthetics and environmental care.",
     "Hands-on experience as a furniture maker gives me a feel for materials and how things are actually built."
   ],
-  skills: ["Revit", "Rhino", "Dalux", "Bluebeam", "Material knowledge", "Sustainable building", "SketchUp"],
+  skills: [
+    { label: "Software", items: ["Revit", "Rhino", "SketchUp", "Dalux", "Bluebeam"] },
+    { label: "Technical skills", items: ["Material Knowledge", "Sustainable Construction", "Building Design"] }
+  ],
   education: [
-    { years: "2024 – 2027", title: "Architectural Technology & Construction Management", place: "KEA / EK, Copenhagen (ongoing)" },
-    { years: "2026", title: "Exchange semester, Architecture/Design (6 months)", place: "Politecnico di Milano, Italy" },
-    { years: "2018 – 2021", title: "Upper secondary (STX)", place: "Rosborg Gymnasium, Vejle" }
+    { years: "2024–2027", title: "Architectural Technology and Construction Management", place: "KEA / EK, Copenhagen, Denmark", note: "Ongoing" },
+    { years: "2026", title: "Exchange Semester in Architecture and Design", place: "Politecnico di Milano, Milan, Italy", note: "Six months" },
+    { years: "2018–2021", title: "Upper Secondary Education, STX", place: "Rosborg Gymnasium, Vejle, Denmark" }
   ],
   experience: [
-    { years: "2024 – now", title: "Furniture maker (unskilled)", place: "J-O-Consult ApS, Østerbro" },
-    { years: "2022 – 2024", title: "Mover, pianos & safes", place: "Casper Transport, Aarhus" },
-    { years: "2021 – 2022", title: "Warehouse worker", place: "UPS, Vejle" },
-    { years: "2020 – 2022", title: "Service worker / porter", place: "Sygehus Lillebælt, Vejle" }
+    { years: "2024–Present", title: "Furniture Maker", place: "J-O-Consult ApS, Østerbro, Denmark" },
+    { years: "2022–2024", title: "Mover Specialising in Pianos and Safes", place: "Casper Transport, Aarhus, Denmark" },
+    { years: "2021–2022", title: "Warehouse Worker", place: "UPS, Vejle, Denmark" },
+    { years: "2020–2022", title: "Service Assistant and Porter", place: "Sygehus Lillebælt, Vejle, Denmark" }
   ],
   cvFile: "assets/cv.pdf", // [PLACEHOLDER] swap for English CV when ready
   links: [
-    { label: "LinkedIn", url: "#" } // [PLACEHOLDER] real LinkedIn URL
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/johan-g-kjeldsen-5a327b37a/" }
   ]
 };
 

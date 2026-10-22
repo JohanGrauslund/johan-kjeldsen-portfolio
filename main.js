@@ -77,15 +77,16 @@ function home() {
   });
   $("#work-index").addEventListener("mouseleave", () => peek.classList.remove("is-on"));
 
-  const list = (items) => `<ul>${items.map((e) => `<li><span class="mono">${e.years}</span><span>${e.title}<small>${e.place}</small></span></li>`).join("")}</ul>`;
+  // CV entry: "years | title" on one line, then organisation, then an optional note
+  const list = (items) => `<ul>${items.map((e) => `<li><p class="cv__head"><span class="mono">${e.years}</span><span class="cv__sep" aria-hidden="true">|</span><strong>${e.title}</strong></p><small>${e.place}</small>${e.note ? `<small class="cv__note">${e.note}</small>` : ""}</li>`).join("")}</ul>`;
   $("#about-body").innerHTML = `
     <div>${img(S.portrait, S.portraitAlt, "about__img reveal")}</div>
     <div>
       <div class="about__bio">${S.bio.map((b) => `<p>${b}</p>`).join("")}</div>
       <div class="cv" style="margin-top:var(--s-5)">
         <div><h3 class="mono">Education</h3>${list(S.education)}</div>
-        <div><h3 class="mono">Experience</h3>${list(S.experience)}</div>
-        <div><h3 class="mono">Skills</h3><ul class="chips mono">${S.skills.map((s) => `<li>${s}</li>`).join("")}</ul></div>
+        <div><h3 class="mono">Professional experience</h3>${list(S.experience)}</div>
+        <div><h3 class="mono">Skills</h3>${S.skills.map((g) => `<p class="cv__skill-l mono">${g.label}</p><ul class="chips mono">${g.items.map((x) => `<li>${x}</li>`).join("")}</ul>`).join("")}</div>
       </div>
     </div>`;
 
